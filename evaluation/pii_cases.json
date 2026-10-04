@@ -1,0 +1,23 @@
+[
+  {"text": "My phone number is 9876543210", "expected": ["IN_PHONE"]},
+  {"text": "Call me on +91 98765 43210", "expected": ["IN_PHONE"]},
+  {"text": "Reach me at 7654321098 after 5 pm", "expected": ["IN_PHONE"]},
+  {"text": "Aadhaar: 2345 6789 0123", "expected": ["AADHAAR"]},
+  {"text": "my aadhar is 345678901234", "expected": ["AADHAAR"]},
+  {"text": "PAN card ABCPS1234K", "expected": ["PAN"]},
+  {"text": "my pan is bcdpn2345l", "expected": ["PAN"]},
+  {"text": "reg no 22BCE1003", "expected": ["VIT_REG_NO"]},
+  {"text": "what is the cgpa of 22bce1004", "expected": ["VIT_REG_NO"]},
+  {"text": "Email me at priya.nair@vitstudent.ac.in", "expected": ["EMAIL_ADDRESS"]},
+  {"text": "Reg 22BCE1001, phone 9876543210, Aadhaar 2345 6789 0123, PAN ABCPS1234K, mail rahul@gmail.com",
+   "expected": ["AADHAAR", "EMAIL_ADDRESS", "IN_PHONE", "PAN", "VIT_REG_NO"]},
+  {"text": "Rahul Sharma lives in Chennai", "expected": ["LOCATION", "PERSON"]},
+  {"text": "Please ask Dr. Meena Iyer about the exam", "expected": ["PERSON"]},
+  {"text": "Sneha Reddy moved from Hyderabad to Jaipur", "expected": ["LOCATION", "PERSON"]},
+  {"text": "Any upcoming notices?", "expected": []},
+  {"text": "The university is closed for Diwali", "expected": []},
+  {"text": "FAT exams begin on 17 November", "expected": []},
+  {"text": "My CGPA is 8.7 and attendance is 91%", "expected": []},
+  {"text": "Room 12345, order 1234567890", "expected": []},
+  {"text": "Teams of 2 to 4 members can register for the VIT hackathon", "expected": []}
+]

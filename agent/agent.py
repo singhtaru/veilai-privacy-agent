@@ -63,7 +63,9 @@ def _pipeline(user, prompt, trace, ps):
             restored = {k: ps.restore(str(v)) for k, v in raw_args.items()}
             decision = check_permission(user, tool_name, restored)
             trace.tool_requested = tool_name
-            trace.target_reg_no = decision.args.get("reg_no")
+            trace.target_reg_no = decision.args.get("reg_no") or (
+                user.get("linked_reg_no") if tool_name == "get_my_record" else None
+            )
 
             if not decision.allowed:
                 trace.permission_status = "DENIED"

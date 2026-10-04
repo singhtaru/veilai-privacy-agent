@@ -15,6 +15,9 @@ PATTERN_ENTITIES = {"EMAIL_ADDRESS", "IN_PHONE", "AADHAAR", "PAN", "VIT_REG_NO"}
 
 SCORE_THRESHOLD = 0.5
 
+# Words spaCy may wrongly tag as names or places; never treat them as PII
+ALLOW_LIST = ["Diwali", "VIT", "FAT"]
+
 # Created once when the module is first imported (loading spaCy takes a few seconds)
 _analyzer = AnalyzerEngine()
 for recognizer in CUSTOM_RECOGNIZERS:
@@ -44,6 +47,7 @@ def detect(text, entities=ALL_ENTITIES):
         language="en",
         entities=entities,
         score_threshold=SCORE_THRESHOLD,
+        allow_list=ALLOW_LIST,
     )
     return _resolve_overlaps(results)
 
