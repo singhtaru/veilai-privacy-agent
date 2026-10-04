@@ -1,0 +1,7 @@
+streamlit
+groq
+presidio-analyzer
+spacy
+python-dotenv
+bcrypt
+pandas
