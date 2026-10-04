@@ -14,6 +14,8 @@ DB_PATH = str(DATA_DIR / "privacy.db")
 
 MAX_AGENT_STEPS = 3
 AUDIT_RETENTION_DAYS = 30
+MAX_PROMPT_CHARS = 1000
+LLM_TIMEOUT_SECONDS = 30
 
 if not GROQ_API_KEY:
     raise RuntimeError("GROQ_API_KEY is missing. Add it to your .env file.")
