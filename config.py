@@ -13,6 +13,7 @@ DATA_DIR.mkdir(exist_ok=True)
 DB_PATH = str(DATA_DIR / "privacy.db")
 
 MAX_AGENT_STEPS = 3
+AUDIT_RETENTION_DAYS = 30
 
 if not GROQ_API_KEY:
     raise RuntimeError("GROQ_API_KEY is missing. Add it to your .env file.")
